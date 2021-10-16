@@ -12,14 +12,14 @@ header = {
 url1="https://www.accuweather.com/en/id/bayangkara/3490311/weather-forecast/3490311"
 url2="https://www.bmkg.go.id/cuaca/prakiraan-cuaca.bmkg?Kota=Jayapura&AreaID=501447&Prov=24"
 link=requests.get(url1,headers=header)
-print(BeautifulSoup(link.content,'lxml'))
-#sup=BeautifulSoup(link,'html.parser')
+#print(BeautifulSoup(link.content,'lxml'))
+sup=BeautifulSoup(link.content,'lxml')
 #tmp=sup.find_all('div',class_='kiri')
 #print(sup)
 
-#page=sup.find_all('p',class_='title')
-#for pg in tmp:
-#       print(pg)
+page=sup.find_all('div',class_='temp')
+for pg in page:
+       print(pg)
 
 #print('hello world')
 
